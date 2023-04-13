@@ -3,13 +3,14 @@ package main
 import (
 	"busquedas"
 	"fmt"
+	"ordenamiento"
 	"sort"
 	"time"
 	"utiles"
 )
 
 func main() {
-	arreglo := utiles.GenerarArreglo(10, 100000)
+	arreglo := utiles.GenerarArreglo(10, 1000000)
 	buscado := -1
 
 	//fmt.Println(arreglo)
@@ -29,5 +30,10 @@ func main() {
 	// Busqueda Binaria
 	fmt.Println(busquedas.BusquedaBinaria(arreglo, buscado))
 	fmt.Println("Busqueda Binaria: ", time.Since(inicio))
+
+	inicio = time.Now()
+	//Ordenamiento por burbujeo
+	ordenamiento.Burbujeo(arreglo)
+	fmt.Println("Ordenamiento por Burbujeo: ", time.Since(inicio))
 
 }
